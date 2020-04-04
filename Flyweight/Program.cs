@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Flyweight
 {
@@ -10,6 +6,29 @@ namespace Flyweight
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("---# DESIGN PATTERN FLYWEIGHT");
+
+            FabricaFlyweight fabrica = new FabricaFlyweight();
+
+            string cor = string.Empty;
+
+            Tartaruga tartaruga;
+
+            while (true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Qual tartaruga enviar para tela: ");
+
+                cor = Console.ReadLine();
+
+                tartaruga = fabrica.GetTartaruga(cor);
+
+                tartaruga.Mostra(cor);
+
+                Console.WriteLine();
+                Console.WriteLine("------------------------------");
+
+            }
         }
     }
 }
